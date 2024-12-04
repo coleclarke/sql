@@ -1,0 +1,9 @@
+ALTER TRIGGER Calculate_Total8
+ON SSD
+AFTER INSERT
+AS
+BEGIN
+    UPDATE SSD
+    SET Total = Sata + Mdot2
+    WHERE Total IS NULL;
+END;
